@@ -5,5 +5,5 @@ To use:
 * Repeat as many times as you want
 * Kill the console to quit in this version
 
-The AI will tell you if it knows your message and how many times you said it.
+The AI will tell you if it knows your message and how many times you said it.  
 If the message is not memorized, the AI will tell that it doesn't know and memorize the message.
