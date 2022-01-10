@@ -1,5 +1,6 @@
 # Santi AI V1
 To use:
+* Download all the .py files into a folder
 * Run main.py
 * Write your message
 * Repeat as many times as you want
