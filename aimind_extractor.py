@@ -5,11 +5,7 @@ humind_file = "previous_user_inputs.humind"
 
 data = file_handler.aiload(aimind_file)
 
-print(type(data))
-
 for i, t in enumerate(data):
     data[i] = str(t) + "\n"
 
-print(type(data))
-
-file_handler.husave(data, humind_file)
+file_handler.husave(data, humind_file, generate=True)
