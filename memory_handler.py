@@ -19,14 +19,15 @@ def memory_check(answer, memory=ai_memory):
     return {"bool": False}
 
 
-def memory_update(answer, memory=ai_memory, memoryfile=memoryfile_name, add=False):
+def memory_update(answer_dictionary, action, memory=ai_memory, memoryfile=memoryfile_name):
     """Adds new answers into the AI memory as a dictionary. {"name": answer, "count": 1}\n
     Updates counters of known answers\n
     Pickles the memory into the memory file"""
-    if add:
-        element = {"name": answer, "count": 1}
-        memory.append(element)
-    else:
-        answer["count"] += 1
+    if action == "add":
+        memory.append(answer_dictionary)
+    if action == "count":
+        answer_dictionary["count"] += 1
+    if action == "remove":
+        memory.remove(answer_dictionary)
 
     file_handler.aisave(memory, memoryfile)
