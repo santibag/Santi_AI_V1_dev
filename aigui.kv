@@ -2,7 +2,16 @@
     BoxLayout:
         size: root.size
         orientation: "vertical"
-        size_hint: 1, 0.1
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                text: "Previous answer: "
+            Label:
+                id: label_received_answer
+                text: ""
+        Label:
+            id: label1
+            text: root.label_text
         TextInput:
             id: text_input_1
             text: ""
@@ -10,7 +19,6 @@
             id: button1
             text: "Send\nNudes"
             on_press:
+                label_received_answer.text = text_input_1.text
                 root.send_answer()
-        Label:
-            id: label1
-            text: root.label_text
+                text_input_1.text = ""
