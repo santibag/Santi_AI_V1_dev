@@ -1,4 +1,5 @@
 import pickle
+from datetime import datetime
 
 
 def husave(data, file_name, generate=False):
@@ -16,9 +17,9 @@ def log_it(event, warn=False, initial=False):
     """Saves events into log.txt file.
     Resets log.txt at the start of the AI."""
     if initial:
-        husave(event+"\n", "log.txt", generate=True)
+        husave(datetime.now().strftime("%x %X ")+event+"\n", "log.txt", generate=True)
     else:
-        husave(event+"\n", "log.txt")
+        husave(datetime.now().strftime("%x %X ")+event+"\n", "log.txt")
     if warn:
         print(event)
 
