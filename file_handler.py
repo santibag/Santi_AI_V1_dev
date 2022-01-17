@@ -40,7 +40,7 @@ def aiload(file_name):
         return data
     except FileNotFoundError:
         log_it("File Handler says: Aiload couldn't find {0}. Generating {0}.".format(file_name))
-        aisave(None, file_name)
+        aisave([], file_name)
         data = []
         return data
 
@@ -54,6 +54,6 @@ def huload(file_name):
         return data
     except FileNotFoundError:
         log_it("File Handler says: Huload couldn't find {0}. Generating {0}.".format(file_name))
-        husave(None, file_name)
-        data = []
+        husave("", file_name)
+        data = ""
         return data
