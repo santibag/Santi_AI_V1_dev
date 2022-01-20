@@ -17,12 +17,5 @@ if running_mode == "gui":
 # If console mode is chosen, the loop below will start AI in console mode
 elif running_mode == "console":
     log_it("Initializing console.")
-
-    import answer_handler
-    answer_handler.running_mode = running_mode
-
-    while True:
-        # It will ask for a message
-
-        user_answer = input("\nPlease tell me something:\n")
-        print(answer_handler.answer_evaluation(user_answer))
+    from console_handler import console_app
+    console_app()
