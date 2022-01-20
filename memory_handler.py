@@ -1,6 +1,7 @@
 """Manages the memory related tasks."""
 
 import file_handler
+import datetime
 
 memoryfile_name = "previous_user_inputs.aimind"
 ai_memory = file_handler.aiload(memoryfile_name)
@@ -25,8 +26,9 @@ def memory_update(answer_dictionary, action, memory=ai_memory, memoryfile=memory
     Pickles the memory into the memory file"""
     if action == "add":
         memory.append(answer_dictionary)
-    if action == "count":
+    if action == "update":
         answer_dictionary["count"] += 1
+        answer_dictionary["last received"] = datetime.datetime.now().strftime("%X %x")
     if action == "remove":
         memory.remove(answer_dictionary)
 
