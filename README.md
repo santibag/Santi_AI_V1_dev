@@ -1,4 +1,7 @@
 # Santi AI V1
+
+Development ended for the beginning of a new prototype development.
+
 Prerquisities:
 This app is not standalone in this version. You may have problems in some installations.
 I use
